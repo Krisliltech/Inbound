@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model account {
+  id           Int            @id @default(autoincrement())
+  auth_id      String?        @db.VarChar(40)
+  username     String?        @db.VarChar(30)
+  phone_number phone_number[]
+}
+
+model phone_number {
+  id         Int      @id @default(autoincrement())
+  number     String?  @db.VarChar(40)
+  account_id Int?
+  account    account? @relation(fields: [account_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
