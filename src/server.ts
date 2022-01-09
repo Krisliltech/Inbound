@@ -16,5 +16,5 @@ service(app);
 
 const PORT = process.env.PORT!
 app.listen(PORT, ()=>{
-    console.log(`Server now running on port ${PORT}`)
+    console.log(`Inbound now running on port ${PORT}`)
 })
