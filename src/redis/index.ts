@@ -4,7 +4,8 @@ import * as redis from 'redis'
 function connect(){
 
     const redisClientObj = redis.createClient({
-            url: env.REDIS_HOST
+            url: env.REDIS_HOST,
+            password: env.REDIS_PASS
         })
     
         redisClientObj.connect();

@@ -26,7 +26,8 @@ const envConfig_1 = __importDefault(require("../config/envConfig"));
 const redis = __importStar(require("redis"));
 function connect() {
     const redisClientObj = redis.createClient({
-        url: envConfig_1.default.REDIS_HOST
+        url: envConfig_1.default.REDIS_HOST,
+        password: envConfig_1.default.REDIS_PASS
     });
     redisClientObj.connect();
     redisClientObj.on('connect', () => {

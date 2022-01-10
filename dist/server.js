@@ -13,5 +13,5 @@ app.use(express_1.default.urlencoded({ extended: true }));
 (0, service_1.default)(app);
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
-    console.log(`Server now running on port ${PORT}`);
+    console.log(`Inbound now running on port ${PORT}`);
 });
